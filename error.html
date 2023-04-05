@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>결제 페이지</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #2196f3;
+        color: white;
+        padding: 1em;
+        text-align: center;
+      }
+
+      main {
+        margin: 2em auto;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 1em 2em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        margin: 0.5em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      .success-message {
+        color: #4caf50;
+        font-size: 1.2em;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>결제 페이지</h1>
+    </header>
+    <main>
+      <button id="payment-button">결제</button>
+      <p class="success-message" id="success-message"></p>
+      <script>
+        const paymentButton = document.getElementById("payment-button");
+
+
+        paymentButton.addEventListener("click", function() {
+          successMessage.innerText = "Payment has been completed";
+        });
+      </script>
+    </main>
+  </body>
+</html>
