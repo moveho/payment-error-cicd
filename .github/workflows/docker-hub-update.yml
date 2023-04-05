@@ -31,6 +31,3 @@ jobs:
           tags: |
             moveho/payment:latest
             moveho/payment:${{ github.sha }}
-            moveho/payment:0.1
-            moveho/payment:0.2
-            moveho/payment:0.3
