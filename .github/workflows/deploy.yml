@@ -31,9 +31,9 @@ jobs:
         docker push moveho/payment:latest
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
-      known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
       with:
         key: ${{ env.SSH_PRIVATE_KEY }}
+        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
         name: ssh-key
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
