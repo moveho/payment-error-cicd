@@ -48,4 +48,4 @@ jobs:
         username: ${{ env.SSH_USERNAME }}
         port: ${{ env.SSH_PORT }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: ~/.ssh/known_hosts
+        known_hosts: ${{ env.SSH_HOST }}
