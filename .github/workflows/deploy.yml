@@ -18,5 +18,5 @@ jobs:
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           port: ${{ secrets.EC2_SSH_PORT }}
           script: |
-            cd /path/to/docker-compose.yml
-            ./update-docker-image.sh
+            cd /root/payment-error-cicd
+            ./cicd.sh
