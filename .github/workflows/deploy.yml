@@ -26,7 +26,7 @@ jobs:
     - name: SSH into VM and update Docker container
       uses: appleboy/ssh-action@master
       with:
-        host: 192.168.56.107
+        host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
