@@ -33,6 +33,7 @@ jobs:
       uses: shimataro/ssh-key-action@v2    
       with:
         key: ${{ env.SSH_PRIVATE_KEY }}
+        known_hosts: 'placeholder'
         name: ssh-key 
     - name: Adding Known Hosts
       run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
