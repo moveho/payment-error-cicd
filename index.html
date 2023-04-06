@@ -57,8 +57,9 @@
       <p class="success-message" id="success-message"></p>
       <script>
 	const paymentButton = document.getElementById("payment-button");
-
-	paymentButton.addEventListener("click", function() {
+        const successMessage = document.getElementById("success-message");
+        
+        paymentButton.addEventListener("click", function() {
 	  successMessage.innerText = "Payment has been completed";
 	});
       </script>
