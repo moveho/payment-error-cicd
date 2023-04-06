@@ -1,27 +1,22 @@
-name: Deploy latest Docker image to AWS EC2
+name: Update Docker Image on EC2
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install SSH client
-        run: sudo apt-get install openssh-client
-
-      - name: Deploy latest Docker image
-        run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@${{ secrets.EC2_PUBLIC_IP }} << EOF
-            docker stop payment-container || true
-            docker rm payment-container || true
-            docker pull moveho/payment:latest
-            docker run -d --name payment-container -p 80:80 moveho/payment:latest
-          EOF
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          EC2_PUBLIC_IP: ${{ secrets.EC2_PUBLIC_IP }}
+      - name: SSH into EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          port: ${{ secrets.EC2_SSH_PORT }}
+          script: |
+            cd /path/to/docker-compose.yml
+            ./update-docker-image.sh
