@@ -24,7 +24,7 @@ jobs:
         tags: moveho/payment:latest
 
     - name: SSH into VM and update Docker container
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@v0.1.9
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
