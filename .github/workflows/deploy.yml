@@ -33,6 +33,4 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /home/kevin/payment-error-cicd
-          docker-compose down
-          docker-compose pull
-          docker-compose up -d
+          sh cicd.sh
