@@ -30,7 +30,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
+        timeout: 5m
         script: |
           cd /home/kevin/payment-error-cicd
           sh cicd.sh
-        timeout-minutes: 300
