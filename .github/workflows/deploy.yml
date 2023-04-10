@@ -33,4 +33,4 @@ jobs:
         script: |
           cd /home/kevin/payment-error-cicd
           sh cicd.sh
-        timeout-minutes: 30
+        timeout-minutes: 300
