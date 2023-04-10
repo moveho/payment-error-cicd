@@ -25,7 +25,6 @@ jobs:
 
     - name: SSH into VM and update Docker container
       uses: appleboy/ssh-action@master
-      timeout-minutes: 15
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
