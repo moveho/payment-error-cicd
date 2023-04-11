@@ -53,11 +53,10 @@
       <h1>Payment page</h1>
     </header>
     <main>
-      <button id="payment-button">pay</button>
+      <button id="payment-button">pay-error</button>
       <p class="success-message" id="success-message"></p>
       <script>
 	const paymentButton = document.getElementById("payment-button");
-        const successMessage = document.getElementById("success-message");
         paymentButton.addEventListener("click", function() {
 	  successMessage.innerText = "Payment has been completed";
 	});
